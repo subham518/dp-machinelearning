@@ -5,5 +5,15 @@ st.title('Machine Learning App')
 
 st.info('This is app builds a machine learning model!')
 
-df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/refs/heads/master/penguins_cleaned.csv')
-df
+with st.expander('Data'):
+  st.write('**Raw data**')
+  df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/refs/heads/master/penguins_cleaned.csv')
+  df
+  
+  st.write('**X**')
+  x = df.drop('species', axis=1)
+  x
+  
+  st.write('**y**')
+  y = df.species
+  y
