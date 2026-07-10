@@ -63,7 +63,19 @@ with st.expander('Input features'):
   input_penguins
   st.write('**Encoded input penguin**')
   input_row
-  
+
+# Model training and inference
+## Train the ML model
+clf = RandomForestClassifier()
+clf.fit(X, y)
+
+## Apply model to make predictions
+prediction = clf.predict(input_row)
+prediction_proba = clf.predict_proba(input_row)
+
+df_prediction_proba = pd.DataFrame(prediction_proba)
+df_prediction_proba.columns = ['Adelie', 'Chinstrap', 'Gentoo']
+
 
 
 
